@@ -30,8 +30,10 @@ alias char FT_String;
 
 extern(C):
 
-FT_Error FT_Init_FreeType(FT_Library *alibrary );
+FT_Error FT_Init_FreeType(FT_Library *alibrary);
+FT_Error FT_Done_FreeType(FT_Library library);
 FT_Error FT_New_Face(FT_Library library, const (char*)  filepathname, FT_Long face_index, FT_Face* aface );
+FT_Error FT_Done_Face(FT_Face face);
 FT_Error FT_Set_Char_Size(FT_Face     face,
                     FT_F26Dot6  char_width,
                     FT_F26Dot6  char_height,
