@@ -59,13 +59,9 @@ FT_Error FT_Get_Kerning(FT_Face face, FT_UInt left_glyph, FT_UInt right_glyph,
 enum FT_LOAD : uint
 {
   DEFAULT = 0x0,
-  Default = DEFAULT,
   NO_SCALE = 0x1,
-  No_Scale = NO_SCALE,
   NO_HINTING = 0x2,
-  No_Hinting = NO_HINTING,
   RENDER = 0x4,
-  Render = RENDER,
   NO_BITMAP = 0x8,
   VERTICAL_LAYOUT = 0x10,
   FORCE_AUTOHINT = 0x20,
@@ -196,8 +192,32 @@ struct FT_BBox
   FT_Pos  xMax, yMax;
 };
 
-struct FT_SizeRec_;
-alias FT_SizeRec_* FT_Size;
+struct  FT_Size_Metrics
+{
+  FT_UShort  x_ppem;      /* horizontal pixels per EM               */
+  FT_UShort  y_ppem;      /* vertical pixels per EM                 */
+
+  FT_Fixed   x_scale;     /* scaling values used to convert font    */
+  FT_Fixed   y_scale;     /* units to 26.6 fractional pixels        */
+
+  FT_Pos     ascender;    /* ascender in 26.6 frac. pixels          */
+  FT_Pos     descender;   /* descender in 26.6 frac. pixels         */
+  FT_Pos     height;      /* text height in 26.6 frac. pixels       */
+  FT_Pos     max_advance; /* max horizontal advance, in 26.6 pixels */
+};
+
+struct FT_Size_InternalRec_;
+alias FT_Size_InternalRec_*  FT_Size_Internal;
+
+struct FT_SizeRec
+{
+  FT_Face           face;      /* parent face object              */
+  FT_Generic        generic;   /* generic pointer for client uses */
+  FT_Size_Metrics   metrics;   /* size metrics                    */
+  FT_Size_Internal  internal;
+};
+
+alias FT_SizeRec* FT_Size;
 
 struct FT_GlyphSlotRec
 {
