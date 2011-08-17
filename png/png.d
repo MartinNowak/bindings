@@ -8,6 +8,8 @@ version = PNG_FLOATING_POINT_SUPPORTED;
 version = PNG_INFO_IMAGE_SUPPORTED;
 version = PNG_READ_FILLER_SUPPORTED;
 
+pragma(lib, "png");
+
 extern(C):
 
 enum PNG_LIBPNG_VER_STRING = "1.4.3";

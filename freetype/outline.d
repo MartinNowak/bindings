@@ -1,8 +1,6 @@
 module freetype.outline;
 
-private {
-  import freetype.freetype;
-}
+import freetype.freetype;
 
 extern(C):
 

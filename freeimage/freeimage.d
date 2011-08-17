@@ -24,6 +24,8 @@
 // ==========================================================
 module freeimage.freeimage;
 
+pragma(lib, "freeimage");
+
 extern(C):
 // Version information ------------------------------------------------------
 

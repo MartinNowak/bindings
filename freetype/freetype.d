@@ -1,5 +1,7 @@
 module freetype.freetype;
 
+pragma(lib, "freetype");
+
 struct FT_LIBRARY_;
 alias FT_LIBRARY_* FT_Library;
 
