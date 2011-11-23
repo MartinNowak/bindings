@@ -9,7 +9,7 @@ alias size_t png_size_t;
 
 /* Typedef for floating-point numbers that are converted
    to fixed-point with a multiple of 100,000, e.g., int_gamma */
-typedef png_int_32 png_fixed_point;
+alias png_int_32 png_fixed_point;
 
 /* Add typedefs for pointers */
 alias void* png_voidp;
