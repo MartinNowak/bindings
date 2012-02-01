@@ -26,7 +26,6 @@ module fontconfig.fontconfig;
 
 import std.string : toStringz;
 pragma(lib, "fontconfig");
-pragma(build, fontconfig);
 
 version(Posix) {
   import core.sys.posix.sys.stat;
